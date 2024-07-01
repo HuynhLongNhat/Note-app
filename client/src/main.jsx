@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import "./Firebase/config.js"
+import "./Firebase/config.jsx"
 import { RouterProvider } from "react-router-dom"
 import Router from './Router/index.jsx'
 import '@fontsource/roboto/300.css';
