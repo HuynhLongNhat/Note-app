@@ -1,20 +1,43 @@
-import express from "express"
+import express, { query } from "express"
 import http from "http"
 import { ApolloServer } from "@apollo/server"
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer"
 import bodyParser from "body-parser"
 import { expressMiddleware } from "@apollo/server/express4"
-import { resolve } from "path"
+import cors from "cors"
 
 const app = express()
 const httpServer = http.createServer(app)
 
-const typeDefs = "";
-const resolvers = {}
+const typeDefs = `#graphql
+
+type Query {
+   folders : [Folder]
+}
+
+
+type Mutation
+  {
+
+    }
+
+type Subscription {
+
+}
+`;
+
+const resolvers = {
+  Query: {
+    name: () => {
+
+    }
+  }
+
+}
 const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })]
+  typeDefs,
+  resolvers,
+  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })]
 })
 
 await server.start()
