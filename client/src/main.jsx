@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import "./Firebase/config.jsx"
-import { RouterProvider } from "react-router-dom"
+import { RouterProvider } from "react-router-dom";
+import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import Router from './Router/index.jsx'
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
