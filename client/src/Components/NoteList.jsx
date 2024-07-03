@@ -24,7 +24,7 @@ export const NoteList = () => {
     {
         const { noteId } = useParams()
         const [activeNoteId, setActiveNoteId] = useState(noteId)
-        const { folder } = { notes: [{ id: "1", content: "<p>This is new note</p>" }] }
+        const { folder } = useLoaderData()
 
         return (
             <Grid container height='100%'>

@@ -3,11 +3,10 @@ import { useEffect, useState } from 'react';
 import { EditorState, convertToRaw, convertFromHTML, ContentState, } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
+import { useLoaderData } from 'react-router-dom';
 export const Note = () => {
-    const note = {
-        id: "1",
-        content: "<p>This is new note<p/>"
-    }
+
+    const { note } = useLoaderData()
     const [editorState, setEditorState] = useState(() => {
         return EditorState.createEmpty()
     })

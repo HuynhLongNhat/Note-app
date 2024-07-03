@@ -14,7 +14,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Container maxWidth='lg' sx={{ textAlign: 'center', marginTop: "50" }}>
       <RouterProvider router={Router} />
     </Container>
-
-
   </React.StrictMode>,
 )
