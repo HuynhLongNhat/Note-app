@@ -1,14 +1,13 @@
-import { useContext } from 'react'
-import { AuthContext } from '../Context/AuthProvider'
-import { Box } from '@mui/system';
 import { Avatar, Menu, MenuItem, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import React, { useContext } from 'react';
 import { useState } from 'react';
+import { AuthContext } from '../Context/AuthProvider';
 
-export const UserMenu = () => {
+export default function UserMenu() {
     const {
         user: { displayName, photoURL, auth },
     } = useContext(AuthContext);
-
     const [anchorEl, setAnchorEl] = useState(null);
 
     const open = Boolean(anchorEl);
@@ -25,10 +24,10 @@ export const UserMenu = () => {
     const handleClick = (e) => {
         setAnchorEl(e.currentTarget);
     };
-
     return (
         <>
-            <Box sx={{ display: 'flex', '&:hover': { cursor: 'pointer' } }}
+            <Box
+                sx={{ display: 'flex', '&:hover': { cursor: 'pointer' } }}
                 onClick={handleClick}
             >
                 <Typography>{displayName}</Typography>
@@ -47,5 +46,5 @@ export const UserMenu = () => {
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
         </>
-    )
+    );
 }

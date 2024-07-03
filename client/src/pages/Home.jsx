@@ -1,11 +1,16 @@
-
 import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import React from 'react';
 import { Outlet, useLoaderData } from 'react-router-dom';
-import { UserMenu } from '../Components/UserMenu';
-import { FolderList } from '../Components/FolderList';
-const Home = () => {
+import FolderList from "../Components/FolderList"
+import PushNotification from '../Components/PushNotification';
+import UserMenu from "../Components/UserMenu"
+
+export default function Home() {
     const { folders } = useLoaderData();
+
+    // console.log('[HomePage]',{data});
+
     return (
         <>
             <Typography variant='h4' sx={{ mb: '20px' }}>
@@ -13,7 +18,7 @@ const Home = () => {
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'right', mb: '10px' }}>
                 <UserMenu />
-                {/* <PushNotification /> */}
+                <PushNotification />
             </Box>
 
             <Grid
@@ -28,7 +33,5 @@ const Home = () => {
                 </Grid>
             </Grid>
         </>
-    )
+    );
 }
-
-export default Home

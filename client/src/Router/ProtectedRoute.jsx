@@ -1,16 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 
-import { Outlet, useNavigate } from 'react-router-dom'
-
-const ProtectedRoute = () => {
-    const navigate = useNavigate()
-    if (localStorage.getItem("accessToken")) {
-        navigate("/login")
+import { Outlet, Navigate } from 'react-router-dom';
+export default function ProtectedRoute({ children }) {
+    console.log({ accessToken: localStorage.getItem('accessToken') });
+    if (!localStorage.getItem('accessToken')) {
+        return <Navigate to='/login' />;
     }
-    return (
-        <div>
-            <Outlet />
-        </div>
-    )
-}
 
-export default ProtectedRoute
+    return <Outlet />;
+}

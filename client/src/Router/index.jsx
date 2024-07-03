@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import AuthProvider from "../Context/AuthProvider";
 import ProtectedRoute from "./ProtectedRoute";
 import ErrorPage from "../pages/ErrorPage";
-import { NoteList } from "../Components/NoteList";
+import NoteList from "../Components/NoteList";
 import { Note } from "../Components/Note";
 import { addNewNote, noteLoader, notesLoader, updateNote } from '../utils/noteUtils';
 const AuthLayout = () => {
